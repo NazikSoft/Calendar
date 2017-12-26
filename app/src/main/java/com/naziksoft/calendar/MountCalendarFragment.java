@@ -10,16 +10,7 @@ import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.maxml.timer.controllers.Controller;
-import com.maxml.timer.entity.Table;
-import com.maxml.timer.entity.eventBus.Events;
-import com.maxml.timer.util.Constants;
-import com.maxml.timer.util.FragmentUtils;
-import com.maxml.timer.util.Utils;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-
+import java.io.File;
 import java.util.Date;
 
 /**
@@ -40,7 +31,7 @@ public class MountCalendarFragment extends Fragment implements View.OnClickListe
         eventBus = new EventBus();
         controller = new Controller(getContext(), eventBus);
         initUI(view);
-        initListener();
+        initListener();new File()
         return view;
     }
 

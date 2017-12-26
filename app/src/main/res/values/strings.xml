@@ -5,4 +5,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="drawable_menu_month">Month</string>
+    <string name="drawable_menu_week">Week</string>
+    <string name="drawable_menu_day">Day</string>
+    <string name="drawable_menu_group">Tools</string>
+    <string name="drawable_menu_login">login</string>
 </resources>
