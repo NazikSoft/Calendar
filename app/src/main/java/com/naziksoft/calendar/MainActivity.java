@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.naziksoft.calendar.fragment.DayCalendarFragment;
 import com.naziksoft.calendar.fragment.MonthActionsInformationFragment;
 import com.naziksoft.calendar.fragment.WeekActionInformationFragment;
 
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity
                 setFragment(new WeekActionInformationFragment());
                 break;
             case R.id.nav_day:
+                setFragment(new DayCalendarFragment());
                 break;
 
             case R.id.nav_login:

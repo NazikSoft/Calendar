@@ -8,8 +8,6 @@ import android.widget.TextView;
 
 import com.naziksoft.calendar.R;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +46,7 @@ public class WeekAdapter extends RecyclerView.Adapter<WeekAdapter.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvTime = (TextView) itemView.findViewById(R.id.tv_time);
+            tvTime = (TextView) itemView.findViewById(R.id.tvTime);
         }
 
         public void bind(String time) {
