@@ -26,11 +26,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by nazar on 26.12.17.
- */
-
 public class DayCalendarFragment extends Fragment {
+
     private RecyclerView recyclerView;
     private List<CalendarEntity> listData = new ArrayList<>();
     private List<OptionButtons> options = new ArrayList<>();

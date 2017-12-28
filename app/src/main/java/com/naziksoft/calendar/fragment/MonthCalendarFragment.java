@@ -11,12 +11,8 @@ import android.widget.TextView;
 
 import com.naziksoft.calendar.R;
 
-public class MonthActionsInformationFragment extends Fragment implements View.OnClickListener {
+public class MonthCalendarFragment extends Fragment implements View.OnClickListener {
     private CalendarView cvCalendar;
-    private TextView tvCallsCount;
-    private TextView tvRestCount;
-    private TextView tvWorkCount;
-    private TextView tvWalkCount;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_calendar, container, false);
@@ -32,18 +28,6 @@ public class MonthActionsInformationFragment extends Fragment implements View.On
         cvCalendar.setDate(System.currentTimeMillis());
     }
 
-    private void updateUI() {
-        int calls = 0;
-        int work = 0;
-        int rests = 0;
-        int walks = 0;
-
-        tvCallsCount.setText(calls + "");
-        tvWorkCount.setText(work + "");
-        tvWalkCount.setText(walks + "");
-        tvRestCount.setText(rests + "");
-    }
-
     @Override
     public void onClick(View view) {
     }
@@ -51,10 +35,6 @@ public class MonthActionsInformationFragment extends Fragment implements View.On
 
     private void initUI(View view) {
         cvCalendar = (CalendarView) view.findViewById(R.id.cv_calendar);
-        tvCallsCount = (TextView) view.findViewById(R.id.tv_calls_count);
-        tvRestCount = (TextView) view.findViewById(R.id.tv_rest_count);
-        tvWorkCount = (TextView) view.findViewById(R.id.tv_work_count);
-        tvWalkCount = (TextView) view.findViewById(R.id.tv_walk_count);
     }
 
     private void initListener() {
