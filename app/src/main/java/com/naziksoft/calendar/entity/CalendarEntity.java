@@ -9,22 +9,24 @@ import java.util.Date;
  */
 
 public class CalendarEntity implements Comparable<CalendarEntity> {
-    private Date date;
+    private Date startDate;
+    private Date endDate;
     private String type;
     private String description;
 
-    public CalendarEntity(Date date, String type, String description) {
-        this.date = date;
+    public CalendarEntity(Date startDate, Date endDate, String type, String description) {
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.type = type;
         this.description = description;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
     public String getType() {
@@ -43,10 +45,19 @@ public class CalendarEntity implements Comparable<CalendarEntity> {
         this.description = description;
     }
 
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
     @Override
     public String toString() {
         return "CalendarEntity{" +
-                "date=" + date +
+                "startDate=" + startDate +
+                ", endDate=" + endDate +
                 ", type='" + type + '\'' +
                 ", description='" + description + '\'' +
                 '}';
@@ -54,7 +65,7 @@ public class CalendarEntity implements Comparable<CalendarEntity> {
 
     @Override
     public int compareTo(@NonNull CalendarEntity o) {
-        if (o.getDate().before(date)) {
+        if (o.getStartDate().before(startDate)) {
             return 1;
         } else {
             return -1;

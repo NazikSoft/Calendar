@@ -13,20 +13,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.naziksoft.calendar.fragment.DayCalendarFragment;
 import com.naziksoft.calendar.fragment.MonthActionsInformationFragment;
 import com.naziksoft.calendar.fragment.WeekActionInformationFragment;
+import com.naziksoft.calendar.utils.StatisticControl;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, StatisticControl {
+
+    private LinearLayout statisticLayout;
+    private TextView eventTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        statisticLayout = (LinearLayout) findViewById(R.id.layoutStatistic);
+        eventTime = (TextView) findViewById(R.id.tvTime);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +55,24 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        hideStatisticLayout();
+    }
+
+    @Override
+    public void showStatisticLayout() {
+        statisticLayout.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideStatisticLayout() {
+        statisticLayout.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void setEventTime(String time) {
+        String text = getString(R.string.statistic_text);
+        String displayText = text + " " + time;
+        eventTime.setText(displayText);
     }
 
     @Override
@@ -84,7 +112,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        switch (id){
+        switch (id) {
             case R.id.nav_month:
                 setFragment(new MonthActionsInformationFragment());
                 break;

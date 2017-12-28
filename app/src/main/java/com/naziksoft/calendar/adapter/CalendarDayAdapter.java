@@ -5,19 +5,17 @@ import android.support.transition.TransitionManager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SimpleItemAnimator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.naziksoft.calendar.R;
 import com.naziksoft.calendar.entity.CalendarEntity;
 import com.naziksoft.calendar.utils.OptionButtons;
 
-import java.util.ArrayList;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
@@ -77,8 +75,11 @@ public class CalendarDayAdapter extends RecyclerView.Adapter<CalendarDayAdapter.
         // time
         CalendarEntity entity = entityList.get(position);
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(entity.getDate());
-        String time = "" + calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE);
+        calendar.setTime(entity.getStartDate());
+        NumberFormat f = new DecimalFormat("00");
+        int hour = calendar.get(Calendar.HOUR);
+        int min = calendar.get(Calendar.MINUTE);
+        String time = f.format(hour)  + ":" + f.format(min);
         holder.time.setText(time);
         // description
         if (entity.getDescription() != null || !entity.getDescription().equals("")) {

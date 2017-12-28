@@ -17,4 +17,5 @@
     <string name="opyion_button_edit">Edit</string>
     <string name="opyion_button_delete">Delete</string>
     <string name="opyion_button_split">Split</string>
+    <string name="statistic_text">Events time:</string>
 </resources>
