@@ -2,9 +2,10 @@ package com.naziksoft.calendar;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.view.View;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,13 +13,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.naziksoft.calendar.fragment.DayCalendarFragment;
-import com.naziksoft.calendar.fragment.MonthCalendarFragment;
-import com.naziksoft.calendar.fragment.WeekCalendarFragment;
+import com.naziksoft.calendar.fragment.MonthActionsInformationFragment;
+import com.naziksoft.calendar.fragment.WeekActionInformationFragment;
 import com.naziksoft.calendar.utils.StatisticControl;
 
 public class MainActivity extends AppCompatActivity
@@ -114,10 +114,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         switch (id) {
             case R.id.nav_month:
-                setFragment(new MonthCalendarFragment());
+                setFragment(new MonthActionsInformationFragment());
                 break;
             case R.id.nav_week:
-                setFragment(new WeekCalendarFragment());
+                setFragment(new WeekActionInformationFragment());
                 break;
             case R.id.nav_day:
                 setFragment(new DayCalendarFragment());
