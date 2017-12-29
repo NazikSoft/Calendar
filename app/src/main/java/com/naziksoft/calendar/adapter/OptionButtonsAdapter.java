@@ -15,25 +15,23 @@ import com.naziksoft.calendar.utils.OptionButtons;
 
 import java.util.List;
 
-/**
- * Created by nazar on 27.12.17.
- */
-
 public class OptionButtonsAdapter extends RecyclerView.Adapter<OptionButtonsAdapter.DayViewHolder> {
 
     private Context context;
     private List<OptionButtons> optionButtonsList;
     private OnClickButton listener;
     private int lastPosition = -1;
+    private int textSize;
 
     public interface OnClickButton {
         void onClick(OptionButtons buttonType);
     }
 
-    public OptionButtonsAdapter(Context context, List<OptionButtons> buttonsList, OnClickButton listener) {
+    public OptionButtonsAdapter(Context context, List<OptionButtons> buttonsList, OnClickButton listener, int textSize) {
         optionButtonsList = buttonsList;
         this.listener = listener;
         this.context = context;
+        this.textSize = textSize;
     }
 
     public static class DayViewHolder extends RecyclerView.ViewHolder {
@@ -48,7 +46,12 @@ public class OptionButtonsAdapter extends RecyclerView.Adapter<OptionButtonsAdap
     @Override
     public DayViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Button button = new Button(context);
+        button.setTextSize(textSize);
         button.setBackground(null);
+        ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.height = textSize * 10;
+        button.setLayoutParams(lp);
+
         return new DayViewHolder(button);
     }
 

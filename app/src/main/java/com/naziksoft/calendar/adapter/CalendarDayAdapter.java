@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.naziksoft.calendar.R;
 import com.naziksoft.calendar.entity.CalendarEntity;
+import com.naziksoft.calendar.R;
 import com.naziksoft.calendar.utils.OptionButtons;
 
 import java.text.DecimalFormat;
@@ -125,7 +125,7 @@ public class CalendarDayAdapter extends RecyclerView.Adapter<CalendarDayAdapter.
             public void onClick(OptionButtons buttonType) {
                 onClickOptionListener.onClick(buttonType, entity);
             }
-        });
+        }, 12);
         recyclerView.setAdapter(adapter);
     }
 }
