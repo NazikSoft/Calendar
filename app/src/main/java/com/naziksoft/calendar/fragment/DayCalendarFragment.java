@@ -87,8 +87,8 @@ public class DayCalendarFragment extends Fragment {
             timeInMillis += different;
         }
         NumberFormat f = new DecimalFormat("00");
-        long hours = TimeUnit.MILLISECONDS.toHours(timeInMillis);
-        long min = TimeUnit.MILLISECONDS.toMinutes(timeInMillis);
+        long hours = timeInMillis / 1000 / 60 / 60;
+        long min = timeInMillis / 1000 / 60 % 60;
         return f.format(hours) + ":" + f.format(min);
     }
 

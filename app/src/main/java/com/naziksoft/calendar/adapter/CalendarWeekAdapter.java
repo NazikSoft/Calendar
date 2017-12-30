@@ -73,7 +73,8 @@ public class CalendarWeekAdapter extends RecyclerView.Adapter<CalendarWeekAdapte
                     makeListHour(i, listTime.get(i));
                 }
             } else {
-                itemView.setBackgroundColor(Color.parseColor("#f2f2f2"));
+                itemView.setBackgroundColor(itemView.getResources().getColor(R.color.gray));
+
 
                 for (int i = entityList.get(position).size() - 1; i >= 0 ; i--) {
                     makeListEntity(entityList.get(position).get(i), position, i);

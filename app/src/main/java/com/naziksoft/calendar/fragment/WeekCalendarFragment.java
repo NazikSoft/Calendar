@@ -27,7 +27,7 @@ import java.util.List;
 public class WeekCalendarFragment extends Fragment {
     private CalendarWeekAdapter adapter;
     private List<OptionButtons> options = new ArrayList<>();
-    List<List<CalendarEntity>> list = new ArrayList<>();
+    private List<List<CalendarEntity>> list = new ArrayList<>();
     private StatisticControl statisticControl;
     private String statisticTime;
 
