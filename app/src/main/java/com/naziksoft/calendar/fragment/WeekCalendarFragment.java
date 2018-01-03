@@ -50,11 +50,8 @@ public class WeekCalendarFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_weet_calendar, container, false);
         RecyclerView rvList = (RecyclerView) rootView.findViewById(R.id.rv_list);
-
         initTestData();
-
         initRecyclerView(rvList);
-
         return rootView;
     }
 
@@ -95,21 +92,18 @@ public class WeekCalendarFragment extends Fragment {
         NumberFormat f = new DecimalFormat("00");
         long hour = timeInMillis / 1000 / 60 / 60;
         long min = timeInMillis / 1000 / 60 % 60;
-
         return f.format(hour) + ":" + f.format(min);
     }
 
     private void initRecyclerView(RecyclerView rvList) {
         rvList.setHasFixedSize(true);
         rvList.setLayoutManager(new GridLayoutManager(getActivity(), 8));
-
         adapter = new CalendarWeekAdapter(list, options, new CalendarWeekAdapter.OnClickOption() {
             @Override
             public void onClick(OptionButtons optionType, CalendarEntity item) {
                 Toast.makeText(getContext(), item.toString(), Toast.LENGTH_SHORT).show();
             }
         });
-
         rvList.setAdapter(adapter);
     }
 
@@ -119,10 +113,8 @@ public class WeekCalendarFragment extends Fragment {
             List<CalendarEntity> list = new ArrayList<>();
             list.add(new CalendarEntity(new Date(10020000 - 2000000 * i), new Date(10020000 + 2000000 * i + 2), "WORK", "Very hard"));
             list.add(new CalendarEntity(new Date(10020000 - 2000000 * (3 + i)), new Date(10020000 + 2000000 * (12 - i) + 2), "WORK", "Very easy"));
-
             this.list.add(list);
         }
-
         options.add(OptionButtons.DELETE);
         options.add(OptionButtons.SPLIT);
         options.add(OptionButtons.EDIT);

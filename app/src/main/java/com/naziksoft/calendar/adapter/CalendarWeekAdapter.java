@@ -47,7 +47,6 @@ public class CalendarWeekAdapter extends RecyclerView.Adapter<CalendarWeekAdapte
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_calendar_week, parent, false);
-
         return new ViewHolder(rootView);
     }
 
@@ -74,8 +73,6 @@ public class CalendarWeekAdapter extends RecyclerView.Adapter<CalendarWeekAdapte
                 }
             } else {
                 itemView.setBackgroundColor(itemView.getResources().getColor(R.color.gray));
-
-
                 for (int i = entityList.get(position).size() - 1; i >= 0 ; i--) {
                     makeListEntity(entityList.get(position).get(i), position, i);
                 }
@@ -142,9 +139,10 @@ public class CalendarWeekAdapter extends RecyclerView.Adapter<CalendarWeekAdapte
                         mExpandedPosition = position * 10 + positionAction;
                     }
                     TransitionManager.beginDelayedTransition(rvOptions);
-                    ((RelativeLayout) itemView).removeAllViews();
-
-                    notifyItemChanged(position);
+//                    ((RelativeLayout) itemView).removeAllViews();
+//
+//                    notifyItemChanged(position);
+                    notifyDataSetChanged();
                 }
             });
         }

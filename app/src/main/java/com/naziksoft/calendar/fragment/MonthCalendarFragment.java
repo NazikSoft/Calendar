@@ -14,7 +14,7 @@ import com.naziksoft.calendar.R;
 import com.naziksoft.calendar.utils.Constants;
 import com.naziksoft.calendar.utils.StatisticControl;
 
-public class MonthCalendarFragment extends Fragment implements View.OnClickListener {
+public class MonthCalendarFragment extends Fragment{
     private CalendarView cvCalendar;
     private StatisticControl statisticControl;
 
@@ -30,13 +30,9 @@ public class MonthCalendarFragment extends Fragment implements View.OnClickListe
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_calendar, container, false);
-
         initUI(view);
-
         initListener();
-
         updateCalendar();
-
         return view;
     }
 
@@ -58,10 +54,7 @@ public class MonthCalendarFragment extends Fragment implements View.OnClickListe
         }
     }
 
-    @Override
-    public void onClick(View view) {
-    }
-
+    // todo
     public String getStatisticTime() {
         return "00:00";
     }
