@@ -75,11 +75,9 @@ public class CalendarWeekAdapter extends RecyclerView.Adapter<CalendarWeekAdapte
             } else {
                 itemView.setBackgroundColor(itemView.getResources().getColor(R.color.gray));
 
-
-                for (int i = entityList.get(position).size() - 1; i >= 0 ; i--) {
+                for (int i = entityList.get(position).size() - 1; i >= 0; i--) {
                     makeListEntity(entityList.get(position).get(i), position, i);
                 }
-
             }
         }
 
@@ -145,6 +143,8 @@ public class CalendarWeekAdapter extends RecyclerView.Adapter<CalendarWeekAdapte
                     ((RelativeLayout) itemView).removeAllViews();
 
                     notifyItemChanged(position);
+
+//                        notifyDataSetChanged();
                 }
             });
         }

@@ -18,4 +18,10 @@
     <string name="opyion_button_delete">Delete</string>
     <string name="opyion_button_split">Split</string>
     <string name="statistic_text">Events time:</string>
+
+    <string-array name="options_action">
+        <item>Edit</item>
+        <item>Delete</item>
+        <item>Split</item>
+    </string-array>
 </resources>
